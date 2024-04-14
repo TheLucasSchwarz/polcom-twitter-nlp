@@ -307,10 +307,6 @@ tweets = pd.read_csv("tweets.csv")
 model = AutoModelForSequenceClassification.from_pretrained("manifesto-project/manifestoberta-xlm-roberta-56policy-topics-context-2023-1-1", trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large")
 
-# Angenommen, Ihr DataFrame heißt df und hat Spalten 'sentence1', 'sentence2', ..., 'sentenceN'
-# und 'context'
-
-# model = model.to('cuda')
 
 def get_predictions(sentence, context):
     # Convert sentence and context to strings if they are not already
