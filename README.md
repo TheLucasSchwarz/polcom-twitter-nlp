@@ -10,6 +10,12 @@ Stay tuned for updates on the project's progress!
 **Overview of the project:**
 1. [Exploratory Data Analysis (EDA)](#First-exploratory-data-analysis-(EDA)-of-the-tweets)
 2. [Preparing the Tweets for the Model](#Preparing-the-Tweets-for-the-Model)
+    1. [Setup Python](#Setup-Python)
+    2. [Load Data](#Load-Data)
+    3. [Preprocessing](#Preprocessing)
+    4. [Save Data](#Save-Data)
+    5. [Create Validation Dataset for Inta-Coder-Reliability-Tests (Human-Model)](#Create-Validation-Dataset-for-Inta-Coder-Reliability-Tests-(Human-Model))
+    6. [Create Batches](#Create-Batches)
 3. [Model Adjustments and Deployment Examples (Full context model with CUDA Optimization + Multi-Threading)](#Model-Adjustments-and-Deployment-Examples-(Full-context-model-with-CUDA-Optimization-+-Multi-Threading))
 
 > [!IMPORTANT]
