@@ -356,7 +356,7 @@ with ThreadPoolExecutor(max_workers= 4 ) as executor:
 tweets = pd.concat(results)
 
 # Save the data
-tweetsdf.to_csv(os.path.join(os.path.dirname(__file__), "../data/tweets_classified"), index=False)
-tweetsdf.to_excel(os.path.join(os.path.dirname(__file__), "../data/tweets_classified.xlsx"), index=False)
+tweets.to_csv(os.path.join(os.path.dirname(__file__), "../data/tweets_classified"), index=False)
+tweets.to_excel(os.path.join(os.path.dirname(__file__), "../data/tweets_classified.xlsx"), index=False)
 ```
 
