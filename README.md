@@ -7,8 +7,12 @@ As a second project, I will train and deploy my own model for the classification
 
 Stay tuned for updates on the project's progress!
 
-## First exploratory data analysis (EDA) of the tweets
+Overview of the project:
+1. [Exploratory Data Analysis (EDA)](#First-exploratory-data-analysis-(EDA)-of-the-tweets)
+2. [Preparing the Tweets for the Model](#Preparing-the-Tweets-for-the-Model)
+3. [Model Adjustments and Deployment Examples (Full context model with CUDA Optimization + Multi-Threading)](#Model-Adjustments-and-Deployment-Examples-(Full-context-model-with-CUDA-Optimization-+-Multi-Threading))
 
+## First exploratory data analysis (EDA) of the tweets
 
 ```
 tweets <- read_csv(here("data", "GER2021_CandidatesTweets_FullYear.csv"))
