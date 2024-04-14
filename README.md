@@ -303,7 +303,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 # Read the CSV file into Python
 tweets = pd.read_csv("tweets.csv")
 
-# Ihr Modell und Tokenizer
+# Load Model and Tokenizer
 model = AutoModelForSequenceClassification.from_pretrained("manifesto-project/manifestoberta-xlm-roberta-56policy-topics-context-2023-1-1", trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large")
 
