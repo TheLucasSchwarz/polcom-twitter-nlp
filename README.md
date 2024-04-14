@@ -56,16 +56,16 @@ ggplot(handle_counts, aes(x=party, y=n)) +
 
 ```{r}
 # Convert 'created_at' to a date-only variable
-tweets$date = as.Date(tweets$created_at)
+tweets$date <- as.Date(tweets$created_at)
 
 # Load the necessary library
 library(ggplot2)
 
 # Count the number of tweets each day
-daily_counts = table(tweets$date)
+daily_counts <- table(tweets$date)
 
 # Convert the table to a data frame for plotting
-daily_counts_df = data.frame(date = as.Date(names(daily_counts)), count = as.integer(daily_counts))
+daily_counts_df <- data.frame(date = as.Date(names(daily_counts)), count = as.integer(daily_counts))
 
 # Create a line chart of the daily counts with a smoothed trendline and a vertical line
 ggplot(daily_counts_df, aes(x=date, y=count)) +
