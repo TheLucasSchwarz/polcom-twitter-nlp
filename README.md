@@ -7,7 +7,17 @@ As a second project, I will train and deploy my own model for the classification
 
 Stay tuned for updates on the project's progress!
 
-## Examples of current code
+## First exploratory data analysis (EDA) of the tweets
+
+<img src="./img/fig1.svg" alt="drawing" width="800"/>
+<img src="./img/fig2.svg" alt="drawing" width="800"/>
+<img src="./img/fig3.svg" alt="drawing" width="800"/>
+
+## Examples of current code for Part 1 of the Project:
+
+> [!IMPORTANT]
+> Please note that this code is still under construction. If there are any bugs, missing code or you have any questions, please feel free to contact me. I am happy to provide further information or insights.
+
 
 ### Preparing the Tweets for the Model
 
