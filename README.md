@@ -3,14 +3,18 @@ This project, which is currently being implemented, aims to use natural language
 
 First, I have classified all tweets according to their political content with PyTorch using the already pre-trained manifestoberta model. These will now be analyzed with logistic multi-level regressions to examine the determinants of specific content across the election campaign. Manifestoberta is based on the multilingual XLM-RoBERTa-Large models, which were tuned on all annotated statements in the text corpus of the MANIFESTO project.
 
-As a second project, I will train and deploy my own model for the classification of negative campaigning based on the tweets using SpaCy. The final goal is to analyze all classified tweets for determinants and dynamics of campaign communication using network analysis and regression models. 
+As a second project, I will train and deploy my own model for the classification of negative campaigning based on the tweets using SpaCy. The final goal is to analyze all classified tweets for determinants and dynamics of campaign communication using network analysis and regression models.
 
 Stay tuned for updates on the project's progress!
 
-Overview of the project:
+**Overview of the project:**
 1. [Exploratory Data Analysis (EDA)](#First-exploratory-data-analysis-(EDA)-of-the-tweets)
 2. [Preparing the Tweets for the Model](#Preparing-the-Tweets-for-the-Model)
 3. [Model Adjustments and Deployment Examples (Full context model with CUDA Optimization + Multi-Threading)](#Model-Adjustments-and-Deployment-Examples-(Full-context-model-with-CUDA-Optimization-+-Multi-Threading))
+
+> [!IMPORTANT]
+> Please note that this code is still under construction. If there are any bugs, missing code or you have any questions, please feel free to contact me. I am happy to provide further information or insights. 
+
 
 ## First exploratory data analysis (EDA) of the tweets
 
