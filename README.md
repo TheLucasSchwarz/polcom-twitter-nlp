@@ -9,8 +9,57 @@ Stay tuned for updates on the project's progress!
 
 ## First exploratory data analysis (EDA) of the tweets
 
+
+```
+tweets <- read_csv(here("data", "GER2021_CandidatesTweets_FullYear.csv"))
+
+
+# Load the necessary library
+library(ggplot2)
+
+# Create a horizontal histogram of the 'party' variable
+ggplot(tweets, aes(x=party)) +
+  geom_bar() +
+  coord_flip() +
+  labs(x="Party", y="Count", title="Number of Tweets of all Candidates per Party in 2021")
+```
 <img src="./img/fig1.svg" alt="fig1" width="600"/>
+
+```{r}
+# Count the number of unique twitter_handle per party
+handle_counts <- tweets %>%
+  group_by(party) %>%
+  summarise(n = n_distinct(twitter_handle))
+
+# Create a horizontal bar chart of the handle counts
+ggplot(handle_counts, aes(x=party, y=n)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  labs(x="Party", y="Count", title="Number of Candidates with Twitter Account per Party")
+
+```
 <img src="./img/fig2.svg" alt="fig2" width="600"/>
+```
+# Convert 'created_at' to a date-only variable
+tweets$date = as.Date(tweets$created_at)
+
+# Load the necessary library
+library(ggplot2)
+
+# Count the number of tweets each day
+daily_counts = table(tweets$date)
+
+# Convert the table to a data frame for plotting
+daily_counts_df = data.frame(date = as.Date(names(daily_counts)), count = as.integer(daily_counts))
+
+# Create a line chart of the daily counts with a smoothed trendline and a vertical line
+ggplot(daily_counts_df, aes(x=date, y=count)) +
+  geom_line() +
+  geom_smooth(method = "loess", span = 0.2, se = FALSE, color = "blue") +
+  geom_vline(aes(xintercept = as.numeric(as.Date("2021-09-26"))), color = "red", size = 1, linetype = "dashed") +
+  labs(x="Date", y="Count", title="Daily Tweet Frequenzy in 2021 of all Candidates", subtitle = "Red line marks German Federal Election Day")
+
+```
 <img src="./img/fig3.svg" alt="fig3" width="600"/>
 
 ## Examples of current code for Part 1 of the Project:
