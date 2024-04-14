@@ -47,7 +47,8 @@ ggplot(handle_counts, aes(x=party, y=n)) +
 
 ```
 <img src="./img/fig2.svg" alt="fig2" width="600"/>
-```
+
+```{r}
 # Convert 'created_at' to a date-only variable
 tweets$date = as.Date(tweets$created_at)
 
