@@ -9,9 +9,9 @@ Stay tuned for updates on the project's progress!
 
 ## First exploratory data analysis (EDA) of the tweets
 
-<img src="./img/fig1.svg" alt="drawing" width="800"/>
-<img src="./img/fig2.svg" alt="drawing" width="800"/>
-<img src="./img/fig3.svg" alt="drawing" width="800"/>
+<img src="./img/fig1.svg" alt="fig1" width="600"/>
+<img src="./img/fig2.svg" alt="fig2" width="600"/>
+<img src="./img/fig3.svg" alt="fig3" width="600"/>
 
 ## Examples of current code for Part 1 of the Project:
 
