@@ -112,38 +112,12 @@ class ProcessingPipeline:
       
       return df
 
-  # def extract_sentences(self, text):
-  #   # Use NLTK to split the text into sentences
-  #   sentences = nltk.sent_tokenize(text, 'german')
-  #   # Filter the sentences to only include those with more than 4 words
-  #   filtered_sentences = [
-  #     sentence for sentence in sentences 
-  #     if len(nltk.word_tokenize(sentence, 'german')) >= 2
-  #   ]
-  #   # Return the filtered sentences
-  #   return filtered_sentences
-
-  # def sentencer_pipe(self, df):
-  #   # Assuming 'text' is the column containing the text, apply the extract_sentences function to each row
-  #   df['sentences'] = df['text'].apply(self.extract_sentences)
-
-  #   # Create new columns for each sentence
-  #   # Convert the list of sentences in each row into a DataFrame, creating a new column for each sentence
-  #   sentences_df = pd.DataFrame(df['sentences'].to_list(), columns=[f'sentence_{i}' for i in range(1, df['sentences'].str.len().max() + 1)])
-
-  #   # Add the new sentence columns to the original DataFrame
-  #   df = pd.concat([df, sentences_df], axis=1)
-
-  #   # Remove the 'sentences' column as it is no longer needed
-  #   df = df.drop(columns=['sentences'])
-
-  #   df[["context"]] = df[["text"]]
-  #   return df
-
+# Create an instance of the ProcessingPipeline class
 pipeline = ProcessingPipeline()
-print("Before sentencer_pipe:", tweets.shape[0])
+# Clean the text in the 'text' column of the DataFrame using the cleaning_text method
 tweets = pipeline.cleaning_text(tweets)
 
+# Remove empty or unuseful tweets
 # Remove rows where 'text' is NaN
 tweets = tweets.dropna(subset=['text'])
 # Remove rows where 'text' is an empty string
@@ -153,9 +127,7 @@ tweets = tweets.loc[tweets['text'].str.strip() != '']
 # Remove rows where 'text' contains only one word
 tweets = tweets[tweets['text'].str.split().str.len() > 2]
 
-# Backup tweets
-tweets_backup = tweets
-
+# Function to extract sentences from text
 def extract_sentences(text):
   # Use NLTK to split the text into sentences
   sentences = nltk.sent_tokenize(text, 'german')
