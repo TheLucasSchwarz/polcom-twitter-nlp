@@ -71,11 +71,7 @@ ggplot(daily_counts_df, aes(x=date, y=count)) +
 ```
 <img src="./img/fig3.svg" alt="fig3" width="600"/>
 
-## Examples of current code for Part 1 of the Project:
-
-> [!IMPORTANT]
-> Please note that this code is still under construction. If there are any bugs, missing code or you have any questions, please feel free to contact me. I am happy to provide further information or insights.
-
+## Examples of current Python Code for Part 1 of the Project:
 
 ### Preparing the Tweets for the Model
 
