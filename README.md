@@ -343,12 +343,25 @@ sentence_columns = [col for col in tweets.columns if col.startswith('sentence')]
 # Define a function to apply get_predictions to each row of a DataFrame
 def apply_predictions(df):
     for column in sentence_columns:
-        results = df.apply(lambda row: get_predictions(row[column], row['context']), axis=1)
-        df[f'{column}_prediction'] = results.apply(lambda x: x[0])
-        df[f'{column}_predicted_class'] = results.apply(lambda x: x[1])
+        def process_row(row):
+            if pd.notna(row[column]):
+                result = get_predictions(row[column], row['context'])
+                return pd.Series({
+                    f'{column}_prediction': result[0],
+                    f'{column}_predicted_class': result[1]
+                })
+            else:
+                return pd.Series({
+                    f'{column}_prediction': None,
+                    f'{column}_predicted_class': None
+                })
+
+        results = df.apply(process_row, axis=1)
+        df = pd.concat([df, results], axis=1)
+
     return df
 
-# Use multi-threading to apply the function to each chunk of the DataFrame
+# Use multi-threading to speed up prediction and apply prediction to data frame
 with ThreadPoolExecutor(max_workers= 4 ) as executor:
     results = list(executor.map(apply_predictions, [df for _, df in tweets.groupby(np.arange(len(tweets)) // 250)]))
 
